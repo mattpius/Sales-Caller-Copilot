@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Caller Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- ===== Sidebar ===== -->
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="#">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1v3.49c0 .55-.45 1-1 1C10.07 21.5 2.5 13.93 2.5 4.5c0-.55.45-1 1-1H7c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25.92l-2.2 2.2z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="sidebar-tooltip">Calls</span>
+        </a>
+        <a class="sidebar-link" href="#">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.3"/><circle cx="17" cy="7" r="3" stroke="currentColor" stroke-width="1.3"/><path d="M2 19.5v-1c0-2.5 3.5-4 7-4s7 1.5 7 4v1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M17 15.5c2.5.5 5 1.8 5 3.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span class="sidebar-tooltip">Contacts</span>
+        </a>
+        <a class="sidebar-link" href="#">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 17v-7M12 17V7M16 17v-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span class="sidebar-tooltip">Analytics</span>
+        </a>
+        <a class="sidebar-link" href="#">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="sidebar-tooltip">Settings</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <main class="main">
+
+      <!-- Header -->
+      <header class="main-header">
+        <div class="header-left">
+          <h1 class="page-title">Calls</h1>
+          <span class="page-subtitle">Activity overview</span>
+        </div>
+        <div class="header-right">
+          <div class="user-profile">
+            <div class="avatar-ring">
+              <div class="avatar-sm">EG</div>
+            </div>
+            <div class="user-info">
+              <span class="user-name">Emma George</span>
+              <span class="user-company">BJT Partners</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Stats Strip -->
+      <div class="stats-strip">
+        <div class="stat-card">
+          <div class="stat-card-inner">
+            <div class="stat-top">
+              <span class="stat-label">Outgoing Calls</span>
+              <div class="stat-badge stat-badge-purple">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1v3.49c0 .55-.45 1-1 1C10.07 21.5 2.5 13.93 2.5 4.5c0-.55.45-1 1-1H7c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25.92l-2.2 2.2z" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 2l4 4-4 4M20 6h-6" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <span class="stat-value">62</span>
+            <span class="stat-trend stat-trend-up">+12% from last week</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-inner">
+            <div class="stat-top">
+              <span class="stat-label">Answered Calls</span>
+              <div class="stat-badge stat-badge-green">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1v3.49c0 .55-.45 1-1 1C10.07 21.5 2.5 13.93 2.5 4.5c0-.55.45-1 1-1H7c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25.92l-2.2 2.2z" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3l3 3 5-5" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <span class="stat-value">97</span>
+            <span class="stat-trend stat-trend-up">+8% from last week</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-inner">
+            <div class="stat-top">
+              <span class="stat-label">Missed Calls</span>
+              <div class="stat-badge stat-badge-rose">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M10.68 13.31a16 16 0 003.41 2.6l1.1-1.1a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1v3.49c0 .55-.45 1-1 1C10.07 21.5 2.5 13.93 2.5 4.5c0-.55.45-1 1-1H7c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25.92l-1.1 1.1a16 16 0 002.46 3.22" stroke="#e11d48" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 1l-6 6M17 1l6 6" stroke="#e11d48" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <span class="stat-value">30</span>
+            <span class="stat-trend stat-trend-down">+3 from last week</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-inner">
+            <div class="stat-top">
+              <span class="stat-label">Avg. Duration</span>
+              <div class="stat-badge stat-badge-muted">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6b7280" stroke-width="1.5"/><path d="M12 7v5l3.5 2" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <span class="stat-value">4m 12s</span>
+            <span class="stat-trend">unchanged</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters Bar -->
+      <div class="table-header">
+        <div class="table-title-row">
+          <h2 class="table-title">Recent calls</h2>
+          <span class="table-count">189 total</span>
+        </div>
+        <div class="filters-row">
+          <button class="filter-chip filter-chip-active">All</button>
+          <button class="filter-chip">Outgoing</button>
+          <button class="filter-chip">Answered</button>
+          <button class="filter-chip">Missed</button>
+          <div class="filter-divider"></div>
+          <button class="filter-chip filter-chip-date">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Last 7 days
+          </button>
+          <div class="filters-spacer"></div>
+          <div class="table-search">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <input type="text" placeholder="Search calls..." />
+          </div>
+        </div>
+      </div>
+
+      <!-- Call Log -->
+      <div class="call-log">
+        <div class="call-row call-row-header">
+          <span class="col-direction"></span>
+          <span class="col-name">Name</span>
+          <span class="col-number">Phone</span>
+          <span class="col-date">Date</span>
+          <span class="col-duration">Duration</span>
+          <span class="col-actions"></span>
+        </div>
+
+        <div class="call-row" data-type="outgoing" style="animation-delay: 0.04s">
+          <span class="col-direction"><div class="call-direction call-direction-out"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></span>
+          <span class="col-name call-row-name">Emma George</span>
+          <span class="col-number call-row-number">(213) 394-0731</span>
+          <span class="col-date call-row-date">29 Jul &middot; 09:15 am</span>
+          <span class="col-duration call-row-duration">17m 20s</span>
+          <span class="col-actions">
+            <button class="row-action-btn" data-tooltip="Play recording"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 4l15 8-15 8V4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="row-action-btn" data-tooltip="More options"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="19" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          </span>
+        </div>
+
+        <div class="call-row" data-type="answered" style="animation-delay: 0.08s">
+          <span class="col-direction"><div class="call-direction call-direction-in"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M17 7L7 17M7 17h8M7 17V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></span>
+          <span class="col-name call-row-name">Lisa Wright</span>
+          <span class="col-number call-row-number">(312) 544-0332</span>
+          <span class="col-date call-row-date">28 Jul &middot; 5:32 pm</span>
+          <span class="col-duration call-row-duration">2m 30s</span>
+          <span class="col-actions">
+            <button class="row-action-btn" data-tooltip="Play recording"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 4l15 8-15 8V4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="row-action-btn" data-tooltip="More options"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="19" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          </span>
+        </div>
+
+        <div class="call-row" data-type="outgoing" style="animation-delay: 0.12s">
+          <span class="col-direction"><div class="call-direction call-direction-out"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></span>
+          <span class="col-name call-row-name">Emma George</span>
+          <span class="col-number call-row-number">(312) 448-9824</span>
+          <span class="col-date call-row-date">28 Jul &middot; 4:21 pm</span>
+          <span class="col-duration call-row-duration call-row-duration-short">7s ring</span>
+          <span class="col-actions">
+            <button class="row-action-btn" data-tooltip="Play recording"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 4l15 8-15 8V4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="row-action-btn" data-tooltip="More options"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="19" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          </span>
+        </div>
+
+        <div class="call-row" data-type="answered" style="animation-delay: 0.16s">
+          <span class="col-direction"><div class="call-direction call-direction-in"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M17 7L7 17M7 17h8M7 17V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></span>
+          <span class="col-name call-row-name">John Parker</span>
+          <span class="col-number call-row-number">+49 10 39 53 59</span>
+          <span class="col-date call-row-date">28 Jul &middot; 4:08 pm</span>
+          <span class="col-duration call-row-duration">46s</span>
+          <span class="col-actions">
+            <button class="row-action-btn" data-tooltip="Play recording"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 4l15 8-15 8V4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="row-action-btn" data-tooltip="More options"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="19" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          </span>
+        </div>
+
+        <div class="call-row" data-type="outgoing" style="animation-delay: 0.2s">
+          <span class="col-direction"><div class="call-direction call-direction-out"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></span>
+          <span class="col-name call-row-name">Michael Chen</span>
+          <span class="col-number call-row-number">(415) 882-1045</span>
+          <span class="col-date call-row-date">28 Jul &middot; 2:15 pm</span>
+          <span class="col-duration call-row-duration">8m 45s</span>
+          <span class="col-actions">
+            <button class="row-action-btn" data-tooltip="Play recording"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 4l15 8-15 8V4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="row-action-btn" data-tooltip="More options"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="19" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          </span>
+        </div>
+
+        <div class="call-row call-row-missed" data-type="missed" style="animation-delay: 0.24s">
+          <span class="col-direction"><div class="call-direction call-direction-missed"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></span>
+          <span class="col-name call-row-name">Unknown</span>
+          <span class="col-number call-row-number">(213) 394-0731</span>
+          <span class="col-date call-row-date">28 Jul &middot; 11:45 am</span>
+          <span class="col-duration call-row-duration call-row-duration-short">3s ring</span>
+          <span class="col-actions">
+            <button class="row-action-btn" data-tooltip="More options"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="19" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          </span>
+        </div>
+
+        <div class="call-row" data-type="answered" style="animation-delay: 0.28s">
+          <span class="col-direction"><div class="call-direction call-direction-in"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M17 7L7 17M7 17h8M7 17V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></span>
+          <span class="col-name call-row-name">Rachel Kim</span>
+          <span class="col-number call-row-number">(628) 555-0198</span>
+          <span class="col-date call-row-date">28 Jul &middot; 10:30 am</span>
+          <span class="col-duration call-row-duration">5m 12s</span>
+          <span class="col-actions">
+            <button class="row-action-btn" data-tooltip="Play recording"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 4l15 8-15 8V4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="row-action-btn" data-tooltip="More options"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="19" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          </span>
+        </div>
+
+        <div class="call-row call-row-missed" data-type="missed" style="animation-delay: 0.32s">
+          <span class="col-direction"><div class="call-direction call-direction-missed"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></span>
+          <span class="col-name call-row-name">David Torres</span>
+          <span class="col-number call-row-number">(917) 334-2210</span>
+          <span class="col-date call-row-date">27 Jul &middot; 6:48 pm</span>
+          <span class="col-duration call-row-duration call-row-duration-short">5s ring</span>
+          <span class="col-actions">
+            <button class="row-action-btn" data-tooltip="More options"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="19" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          </span>
+        </div>
+
+        <div class="call-row call-row-active" data-type="answered" style="animation-delay: 0.36s">
+          <span class="col-direction"><div class="call-direction call-direction-active"><div class="active-pulse"></div><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1v3.49c0 .55-.45 1-1 1C10.07 21.5 2.5 13.93 2.5 4.5c0-.55.45-1 1-1H7c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25.92l-2.2 2.2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></span>
+          <span class="col-name call-row-name">Sarah Johnny</span>
+          <span class="col-number call-row-number">(702) 555-0122</span>
+          <span class="col-date call-row-date">Now</span>
+          <span class="col-duration call-row-duration call-row-duration-active">Active</span>
+          <span class="col-actions"></span>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== Mini Call Popup ===== -->
+    <div class="call-popup" id="callPopup">
+      <div class="call-popup-glow"></div>
+      <div class="call-popup-inner">
+        <div class="popup-status-row">
+          <div class="popup-status-dot"></div>
+          <span class="popup-status-label">Active call</span>
+          <span class="popup-timer" id="popupTimer">03:01</span>
+          <button class="popup-expand-icon" id="expandCallBtn" data-tooltip="Expand" data-tooltip-pos="bottom">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="popup-caller-row">
+          <div class="popup-avatar">SJ</div>
+          <div class="popup-caller-info">
+            <span class="popup-caller-name">Sarah Johnny</span>
+            <span class="popup-caller-role">Product Manager, Acme Corp</span>
+          </div>
+        </div>
+        <div class="popup-controls-row">
+          <button class="popup-ctrl" id="popupHoldBtn" data-tooltip="Hold">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <button class="popup-hangup" id="popupHangupBtn" data-tooltip="End Call">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3.68 13.26C5.79 11.05 8.73 9.5 12 9.5s6.21 1.55 8.32 3.76M7.5 13v2.5a1 1 0 01-1 1h-2a1 1 0 01-1-1V13M20.5 13v2.5a1 1 0 01-1 1h-2a1 1 0 01-1-1V13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="popup-ctrl" id="popupTransferBtn" data-tooltip="Transfer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1v3.49c0 .55-.45 1-1 1C10.07 21.5 2.5 13.93 2.5 4.5c0-.55.45-1 1-1H7c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25.92l-2.2 2.2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Full Screen Call ===== -->
+    <div class="call-screen hidden-call" id="callScreen">
+      <div class="call-screen-inner">
+        <button class="call-minimize-btn" id="minimizeCallBtn" data-tooltip="Minimize" data-tooltip-pos="bottom">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 14h6v6M20 10h-6V4M10 14l-7 7M14 10l7-7" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="call-status-bar">
+          <div class="call-status-dot"></div>
+          <span class="call-status-label">Active Call</span>
+        </div>
+        <div class="call-avatar">
+          <div class="call-avatar-ring"></div>
+          <span class="call-avatar-initials">SJ</span>
+        </div>
+        <p class="call-person-name">Sarah Johnny</p>
+        <p class="call-person-role">Product Manager at Acme Corp</p>
+        <p class="call-timer" id="callTimer">03:01</p>
+        <div class="call-controls">
+          <button class="call-control-btn" id="muteBtn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="9" y="1" width="6" height="14" rx="3" stroke="#444" stroke-width="1.5"/>
+              <path d="M5 12a7 7 0 0014 0M12 19v3" stroke="#444" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Mute</span>
+          </button>
+          <button class="call-control-btn" id="speakerBtn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M11 5L6 9H2v6h4l5 4V5z" stroke="#444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="#444" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Speaker</span>
+          </button>
+          <button class="call-control-btn" id="holdBtn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="10" fill="rgba(0,0,0,0.06)"/>
+              <path d="M9 8v8M15 8v8" stroke="#444" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Hold</span>
+          </button>
+          <button class="call-control-btn" id="keypadBtn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <circle cx="8" cy="6" r="1.5" fill="#444"/><circle cx="12" cy="6" r="1.5" fill="#444"/><circle cx="16" cy="6" r="1.5" fill="#444"/>
+              <circle cx="8" cy="10.5" r="1.5" fill="#444"/><circle cx="12" cy="10.5" r="1.5" fill="#444"/><circle cx="16" cy="10.5" r="1.5" fill="#444"/>
+              <circle cx="8" cy="15" r="1.5" fill="#444"/><circle cx="12" cy="15" r="1.5" fill="#444"/><circle cx="16" cy="15" r="1.5" fill="#444"/>
+              <circle cx="12" cy="19.5" r="1.5" fill="#444"/>
+            </svg>
+            <span>Keypad</span>
+          </button>
+          <button class="call-control-btn" id="transferBtn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="10" fill="rgba(0,0,0,0.06)"/>
+              <path d="M7 12h10M17 12l-3-3M17 12l-3 3" stroke="#444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Transfer</span>
+          </button>
+        </div>
+        <button class="call-hangup-btn" id="hangupBtn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M3.68 13.26C5.79 11.05 8.73 9.5 12 9.5s6.21 1.55 8.32 3.76M7.5 13v2.5a1 1 0 01-1 1h-2a1 1 0 01-1-1V13M20.5 13v2.5a1 1 0 01-1 1h-2a1 1 0 01-1-1V13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>End Call</span>
+        </button>
+        <div class="call-waveform" id="callWaveform">
+          <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+          <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+          <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+          <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Post-Call Widget ===== -->
+    <div class="widget hidden-widget" id="widget">
+      <div class="drag-handle" id="dragHandle">
+        <svg width="6" height="20" viewBox="0 0 6 20" fill="none">
+          <circle cx="1.5" cy="3" r="1.5" fill="#aaa"/><circle cx="4.5" cy="3" r="1.5" fill="#aaa"/>
+          <circle cx="1.5" cy="8" r="1.5" fill="#aaa"/><circle cx="4.5" cy="8" r="1.5" fill="#aaa"/>
+          <circle cx="1.5" cy="13" r="1.5" fill="#aaa"/><circle cx="4.5" cy="13" r="1.5" fill="#aaa"/>
+          <circle cx="1.5" cy="18" r="1.5" fill="#aaa"/><circle cx="4.5" cy="18" r="1.5" fill="#aaa"/>
+        </svg>
+      </div>
+      <div class="widget-inner" id="widgetShell">
+        <button class="widget-minimize-btn" id="widgetMinimizeBtn" data-tooltip="Minimize" data-tooltip-pos="left">
+          <svg width="10" height="2" viewBox="0 0 14 2" fill="none"><rect width="14" height="2" rx="1" fill="currentColor"/></svg>
+        </button>
+        <!-- No Call State -->
+        <div class="state-panel hidden" id="widgetNoCall">
+          <div class="no-call-content">
+            <svg width="32" height="32" viewBox="-1 -1 40 39" fill="none">
+              <path d="M7 10H23A5 5 0 0 1 28 15V26L19 36H7A5 5 0 0 1 2 31V15A5 5 0 0 1 7 10Z" fill="white" stroke="#c5cad4" stroke-width="2.8" stroke-linejoin="round"/>
+              <path d="M28 26V31A5 5 0 0 1 23 36H19" fill="none" stroke="#c5cad4" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 16h14M8 22h14M8 28h10" stroke="#c5cad4" stroke-width="2.8" stroke-linecap="round"/>
+              <path d="M33 0C33.4 3.5 34.5 5 37.5 6 34.5 7 33.4 8.5 33 12 32.6 8.5 31.5 7 28.5 6 31.5 5 32.6 3.5 33 0Z" fill="#c5cad4"/>
+            </svg>
+            <p class="no-call-title">No new calls recorded</p>
+            <p class="no-call-desc">Start or complete a call to get AI-powered summaries and insights.</p>
+            <button class="btn-transcript no-call-btn">Choose or Upload Transcript</button>
+          </div>
+        </div>
+        <!-- Default State -->
+        <div class="state-panel" id="widgetDefault">
+          <div class="widget-text">
+            <p class="widget-heading">Call ended</p>
+            <p class="widget-message">
+              <span>You just finished a call with </span>
+              <span class="caller-name">Sarah Johnny</span>
+              <span> 3 minutes ago.</span>
+            </p>
+          </div>
+          <div class="widget-actions">
+            <button class="btn-summarize" id="summarizeBtn">
+              <svg class="btn-icon" width="16" height="16" viewBox="-1 -1 40 39" fill="none">
+                <path d="M7 10H23A5 5 0 0 1 28 15V26L19 36H7A5 5 0 0 1 2 31V15A5 5 0 0 1 7 10Z" fill="none" stroke="white" stroke-width="2.8" stroke-linejoin="round"/>
+                <path d="M28 26V31A5 5 0 0 1 23 36H19" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 16h14M8 22h14M8 28h10" stroke="white" stroke-width="2.8" stroke-linecap="round"/>
+                <path d="M33 0C33.4 3.5 34.5 5 37.5 6 34.5 7 33.4 8.5 33 12 32.6 8.5 31.5 7 28.5 6 31.5 5 32.6 3.5 33 0Z" fill="white"/>
+              </svg>
+              <span>Summarize and Draft Email</span>
+            </button>
+            <div class="btn-row">
+              <button class="btn-transcript" id="transcriptBtn">Open Transcript</button>
+              <button class="btn-transcript btn-delete" id="deleteCallBtn">Dismiss</button>
+            </div>
+          </div>
+        </div>
+        <!-- Loading State -->
+        <div class="state-panel hidden" id="widgetLoading">
+          <div class="loading-content">
+            <div class="orb-container"><div class="orb">
+              <div class="orb-ring orb-ring-1"></div>
+              <div class="orb-ring orb-ring-2"></div>
+              <div class="orb-ring orb-ring-3"></div>
+            </div></div>
+            <p class="loading-text" id="loadingText">Summarizing Call...</p>
+          </div>
+        </div>
+        <!-- Result State -->
+        <div class="state-panel hidden" id="widgetResult">
+          <div class="result-scrollable">
+          <div class="call-details-card">
+            <div class="call-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1v3.49c0 .55-.45 1-1 1C10.07 21.5 2.5 13.93 2.5 4.5c0-.55.45-1 1-1H7c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25.92l-2.2 2.2z" stroke="#6a6a6a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="call-details-text">
+              <p class="call-title">Discussion on Project Timeline &amp; Next Steps...</p>
+              <p class="call-meta">Thursday, June 19&#x22C5;4:00 – 4:30pm</p>
+              <p class="call-meta">2 guests</p>
+            </div>
+          </div>
+          <div class="summary-header">
+            <p class="summary-title">Here's your summary!</p>
+            <p class="summary-subtitle">I've highlighted the main takeaways from the call.</p>
+          </div>
+          <div class="summary-paragraphs">
+            <div class="summary-paragraph">
+              <p class="paragraph-heading">Next steps agreed</p>
+              <p class="paragraph-body"><span class="name-highlight">Aditi and Sarah</span><span> agreed that the proposal will be finalized and shared by Friday. This includes outlining the integration plan and expected timelines. </span><a href="#" class="transcript-link" data-transcript-target="t3">View in transcript</a></p>
+            </div>
+            <div class="summary-paragraph">
+              <p class="paragraph-heading">Client concerns</p>
+              <p class="paragraph-body"><span class="name-highlight">Sarah</span><span> expressed uncertainty about the integration timeline and asked whether the engineering team could provide a more detailed breakdown in the next update. </span><a href="#" class="transcript-link" data-transcript-target="t4">View in transcript</a></p>
+            </div>
+            <div class="summary-paragraph">
+              <p class="paragraph-heading">Possible new request</p>
+              <p class="paragraph-body"><span class="name-highlight">During the discussion, Sarah</span><span> mentioned they're considering adding a reporting dashboard to better visualize key usage metrics. This is still exploratory but might need a follow-up. </span><a href="#" class="transcript-link" data-transcript-target="t2">View in transcript</a></p>
+            </div>
+            <div class="summary-paragraph">
+              <p class="paragraph-heading">Follow-up action</p>
+              <p class="paragraph-body"><span>A check-in meeting has been tentatively scheduled for next Wednesday to review the proposal and clarify any technical dependencies. </span><a href="#" class="transcript-link" data-transcript-target="t5">View in transcript</a></p>
+            </div>
+          </div>
+          </div>
+          <div class="result-footer">
+            <div class="stop-response-row hidden" id="stopResponseRow"><button class="btn-stop-response" id="stopResponseBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/></svg>Stop Response</button></div>
+            <div class="copilot-input"><input type="text" placeholder="Ask Copilot if any changes..." id="copilotInput" /><button class="send-btn" id="sendBtn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 3l15 7-15 7V11.5L13 10 3 8.5V3z" stroke="#1a1d23" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+            <div class="result-buttons"><button class="btn-close" id="closeBtn">Clear Response</button><button class="btn-draft-email" id="draftEmailBtn">Draft Email</button></div>
+          </div>
+        </div>
+        <!-- Transcript State -->
+        <div class="state-panel hidden" id="widgetTranscript">
+          <div class="transcript-top-row">
+            <button class="back-btn" id="transcriptBackBtn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <p class="transcript-title">Call Transcript</p>
+            <button class="transcript-download-btn" id="downloadBtn" data-tooltip="Download" data-tooltip-pos="left"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 19h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="transcript-header"><p class="transcript-meta">Meeting with Sarah &#x2022; March 24, 2026 &#x2022; Duration: 3:01</p></div>
+          <div class="transcript-search"><input type="text" placeholder="Search transcript..." id="transcriptSearch" /></div>
+          <div class="transcript-conversation">
+            <div class="transcript-entry" data-transcript-id="t1"><span class="entry-time">00:00</span><div class="entry-content"><p class="entry-speaker">Aditi</p><p class="entry-text">Hi Sarah, thanks for joining the call today. I wanted to walk through the proposal we've been working on and get your thoughts.</p></div></div>
+            <div class="transcript-entry" data-transcript-id="t2"><span class="entry-time">00:12</span><div class="entry-content"><p class="entry-speaker">Sarah</p><p class="entry-text">Of course! I've been looking forward to this. I reviewed the initial outline you sent over last week.</p></div></div>
+            <div class="transcript-entry" data-transcript-id="t3"><span class="entry-time">00:21</span><div class="entry-content"><p class="entry-speaker">Aditi</p><p class="entry-text">Great! So the main goal here is to finalize the integration plan and establish a clear timeline. We're aiming to have everything documented and ready by Friday.</p></div></div>
+            <div class="transcript-entry" data-transcript-id="t4"><span class="entry-time">00:35</span><div class="entry-content"><p class="entry-speaker">Sarah</p><p class="entry-text">That sounds good. My main concern is around the timeline for the engineering team. Do we have a detailed breakdown of what needs to happen on their end?</p></div></div>
+            <div class="transcript-entry" data-transcript-id="t5"><span class="entry-time">00:48</span><div class="entry-content"><p class="entry-speaker">Aditi</p></div></div>
+          </div>
+          <div class="transcript-buttons"><button class="btn-summarize-transcript" id="summarizeTranscriptBtn"><svg width="16" height="16" viewBox="-1 -1 40 39" fill="none"><path d="M7 10H23A5 5 0 0 1 28 15V26L19 36H7A5 5 0 0 1 2 31V15A5 5 0 0 1 7 10Z" fill="none" stroke="white" stroke-width="2.8" stroke-linejoin="round"/><path d="M28 26V31A5 5 0 0 1 23 36H19" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16h14M8 22h14M8 28h10" stroke="white" stroke-width="2.8" stroke-linecap="round"/><path d="M33 0C33.4 3.5 34.5 5 37.5 6 34.5 7 33.4 8.5 33 12 32.6 8.5 31.5 7 28.5 6 31.5 5 32.6 3.5 33 0Z" fill="white"/></svg> Summarize and Draft Email</button></div>
+        </div>
+        <!-- Draft Email State -->
+        <div class="state-panel state-draft-email hidden" id="widgetDraftEmail">
+          <div class="draft-back-row"><button class="back-btn" id="draftBackBtn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="draft-back-label">Back to summary</span></div>
+          <div class="draft-form">
+            <div class="draft-field"><label class="draft-label">To</label><div class="draft-to-row"><input type="email" class="draft-input" id="draftTo" value="sarah@company.com" /><button class="draft-cc-toggle" id="ccToggle">Cc</button><button class="draft-cc-toggle" id="bccToggle">Bcc</button></div></div>
+            <div class="draft-field draft-cc-field hidden" id="ccField"><label class="draft-label">Cc</label><input type="email" class="draft-input" id="draftCc" placeholder="Add Cc recipients" /></div>
+            <div class="draft-field draft-cc-field hidden" id="bccField"><label class="draft-label">Bcc</label><input type="email" class="draft-input" id="draftBcc" placeholder="Add Bcc recipients" /></div>
+            <div class="draft-field"><label class="draft-label">Subject</label><input type="text" class="draft-input" id="draftSubject" value="Thank you note for our meeting" /></div>
+            <div class="draft-field"><label class="draft-label">Message</label><textarea class="draft-textarea" id="draftMessage" rows="20">Hi Sarah,
+
+Following up on our productive meeting this morning, I wanted to outline the key action items and timeline we discussed:
+
+Immediate Next Steps:
+• Technical requirements documentation (Due: Friday, June 21)
+• Budget approval from finance team (Due: June 25)
+• Stakeholder review meeting (Scheduled: June 28)
+
+Timeline Milestones:
+• Phase 1 kickoff: July 5
+• Initial prototype: July 20
+• User testing period: August 1-15
+• Final delivery: August 30</textarea></div>
+          </div>
+          <div class="draft-footer">
+            <div class="copilot-input"><input type="text" placeholder="Ask changes in email..." id="draftCopilotInput" /><button class="send-btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 3l15 7-15 7V11.5L13 10 3 8.5V3z" stroke="#1a1d23" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+            <button class="btn-send-email" id="sendEmailBtn"><svg class="btn-gmail-icon" width="14" height="11" viewBox="52 42 88 66" fill="none"><path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/><path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/><path fill="#fbbc04" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/><path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92"/><path fill="#c5221f" d="M52 51v8l20 15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/></svg>Send Email</button>
+          </div>
+        </div>
+        <!-- Email Sent Confirmation State -->
+        <div class="state-panel hidden" id="widgetEmailSent">
+          <div class="email-sent-content">
+            <div class="email-sent-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="email-sent-title">Email Sent!</p>
+            <p class="email-sent-desc">Your follow-up email to Sarah has been delivered successfully.</p>
+            <div class="email-sent-actions">
+              <button class="btn-transcript" id="emailSentViewBtn">View in Sent</button>
+              <button class="btn-transcript" id="emailSentDoneBtn">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Widget Mini FAB (AI icon, shown when widget minimized) -->
+    <button class="widget-mini-fab" id="widgetMiniFab" data-tooltip="Open AI Assistant" data-tooltip-pos="bottom">
+      <svg width="28" height="28" viewBox="-1 -1 40 39" fill="none">
+        <!-- Note body with bottom-right corner cut off -->
+        <path d="M7 10H23A5 5 0 0 1 28 15V26L19 36H7A5 5 0 0 1 2 31V15A5 5 0 0 1 7 10Z" fill="white" stroke="#1a1d23" stroke-width="2.8" stroke-linejoin="round"/>
+        <!-- Page fold: outer corner edge -->
+        <path d="M28 26V31A5 5 0 0 1 23 36H19" fill="none" stroke="#1a1d23" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Three text lines -->
+        <path d="M8 16h14M8 22h14M8 28h10" stroke="#1a1d23" stroke-width="2.8" stroke-linecap="round"/>
+        <!-- 4-point sparkle star (tall and narrow) -->
+        <path d="M33 0C33.4 3.5 34.5 5 37.5 6 34.5 7 33.4 8.5 33 12 32.6 8.5 31.5 7 28.5 6 31.5 5 32.6 3.5 33 0Z" fill="#1a1d23"/>
+      </svg>
+    </button>
+
+    <!-- FAB -->
+    <button class="fab hidden" id="fab">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1v3.49c0 .55-.45 1-1 1C10.07 21.5 2.5 13.93 2.5 4.5c0-.55.45-1 1-1H7c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25.92l-2.2 2.2z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
